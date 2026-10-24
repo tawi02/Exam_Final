@@ -1,0 +1,339 @@
+#fc-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 2147483647;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#fc-floating-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+#fc-floating-btn:active {
+  transform: scale(0.95);
+}
+
+#fc-chatbox {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 340px;
+  height: 460px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transform-origin: bottom right;
+  animation: fc-pop-in 0.2s ease-out;
+}
+
+@keyframes fc-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#fc-chatbox-header {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---- Header greeting ---- */
+#fc-header-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+#fc-greeting {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+#fc-chatbox-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  opacity: 0.85;
+}
+
+#fc-chatbox-close:hover {
+  opacity: 1;
+}
+
+/* ---- Toolbar ---- */
+#fc-toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 6px 10px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fc-tool {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  width: 34px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0;
+  transition: background 0.15s ease;
+}
+
+.fc-tool:hover {
+  background: #e0e7ff;
+}
+
+/* ---- Emoji panel ---- */
+#fc-emoji-panel {
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 8px 10px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fc-emoji {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+.fc-emoji:hover {
+  background: #f3f4f6;
+}
+
+/* ---- Messages ---- */
+#fc-chatbox-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f9fafb;
+}
+
+#fc-chatbox-input-row {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+  gap: 8px;
+}
+
+#fc-chatbox-input {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  resize: none;
+  max-height: 80px;
+  color: #111827;
+}
+
+#fc-chatbox-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+#fc-chatbox-send {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+#fc-chatbox-send:hover {
+  filter: brightness(1.1);
+}
+
+.fc-message {
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.fc-text {
+  white-space: pre-wrap;
+}
+
+.fc-time {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 3px;
+  text-align: right;
+}
+
+.fc-message.user {
+  background: #4f46e5;
+  color: #fff;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.fc-message.bot {
+  background: #e5e7eb;
+  color: #111827;
+  border-bottom-left-radius: 4px;
+}
+
+/* ---- Typing indicator ---- */
+.fc-typing {
+  display: flex;
+  gap: 4px;
+  width: fit-content;
+}
+
+.fc-typing span {
+  width: 6px;
+  height: 6px;
+  background: #9ca3af;
+  border-radius: 50%;
+  animation: fc-bounce 1s infinite ease-in-out;
+}
+
+.fc-typing span:nth-child(2) { animation-delay: 0.15s; }
+.fc-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fc-bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+/* ---- Dark mode ---- */
+#fc-chatbox.fc-dark { background: #111827; }
+#fc-chatbox.fc-dark #fc-toolbar,
+#fc-chatbox.fc-dark #fc-emoji-panel,
+#fc-chatbox.fc-dark #fc-chatbox-input-row {
+  background: #1f2937;
+  border-color: #374151;
+}
+#fc-chatbox.fc-dark #fc-chatbox-messages { background: #111827; }
+#fc-chatbox.fc-dark .fc-tool { background: #374151; }
+#fc-chatbox.fc-dark .fc-tool:hover { background: #4b5563; }
+#fc-chatbox.fc-dark .fc-emoji:hover { background: #374151; }
+#fc-chatbox.fc-dark .fc-message.bot { background: #374151; color: #f9fafb; }
+#fc-chatbox.fc-dark #fc-chatbox-input {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+/* ---- Layout fixes ---- */
+#fc-chatbox,
+#fc-chatbox * {
+  box-sizing: border-box;
+}
+
+#fc-chatbox-header,
+#fc-toolbar,
+#fc-emoji-panel,
+#fc-chatbox-input-row {
+  flex-shrink: 0;
+}
+
+#fc-chatbox-messages {
+  min-height: 0;
+}
+
+#fc-chatbox button,
+#fc-chatbox input {
+  font-family: inherit;
+  margin: 0;
+}
+/* ---- New toolbar / search / font sizes ---- */
+#fc-toolbar {
+  flex-wrap: wrap;
+}
+
+.fc-tool {
+  width: 30px;
+}
+
+#fc-search-row {
+  padding: 6px 10px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+#fc-search-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+  color: #111827;
+  background: #fff;
+}
+
+#fc-search-input:focus {
+  border-color: #7c3aed;
+}
+
+#fc-chatbox.fc-font-0 .fc-message { font-size: 12px; }
+#fc-chatbox.fc-font-1 .fc-message { font-size: 14px; }
+#fc-chatbox.fc-font-2 .fc-message { font-size: 17px; }
+
+#fc-chatbox.fc-dark #fc-search-row {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+#fc-chatbox.fc-dark #fc-search-input {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}

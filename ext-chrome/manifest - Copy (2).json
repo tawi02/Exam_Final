@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Floating Chat",
+  "version": "1.3",
+  "description": "A floating chat button visible across all tabs",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage"]
+}
